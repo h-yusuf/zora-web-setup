@@ -94,10 +94,6 @@
   fill: var(--accent);
 }
 
-.eyeStatic {
-  fill: var(--accent);
-}
-
 .pupil {
   --pupil-x: 0px;
   --pupil-y: 0px;
@@ -130,46 +126,19 @@
 
 .phoneFrame {
   justify-self: center;
-  width: min(220px, 70%);
+  width: min(240px, 70%);
   aspect-ratio: 9 / 16;
   background: var(--surface);
   border: 2px solid var(--creature);
   border-radius: 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
+  overflow: hidden;
   position: relative;
 }
 
-.phoneMini {
-  width: 96px;
-  height: auto;
-}
-
-.demoPlay {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--accent);
-  position: relative;
-}
-
-.demoPlay::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 54%;
-  transform: translate(-50%, -50%);
-  border-style: solid;
-  border-width: 9px 0 9px 15px;
-  border-color: transparent transparent transparent var(--accent-ink);
-}
-
-.phoneFrame p {
-  color: var(--muted);
-  font-size: var(--step-small);
+.phonePhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ---------- About ---------- */

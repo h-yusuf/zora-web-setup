@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import zoraFrontEyes from "../assets/device/zora-front-eyes.jpg";
 import styles from "./Landing.module.css";
 
 const docEntries = [
@@ -153,22 +154,15 @@ export function Landing() {
 
       <section className={styles.demo}>
         <div className={styles.demoText}>
-          <h2>Video yang bikin orang nanya-nanya</h2>
-          <p>
-            Klip TikTok-nya yang bikin Zora Mini dikenal — lagi disiapkan buat ditaruh di sini.
-          </p>
+          <h2>Ini yang bikin orang nanya-nanya</h2>
+          <p>Zora Mini yang asli — bukan render, bukan mockup. Video segera hadir.</p>
         </div>
         <div className={styles.phoneFrame}>
-          <svg viewBox="0 0 120 130" className={styles.phoneMini} aria-hidden="true">
-            <circle cx="36" cy="55" r="26" className={styles.yetiBody} />
-            <circle cx="84" cy="55" r="26" className={styles.yetiBody} />
-            <rect x="24" y="48" width="72" height="56" rx="26" className={styles.yetiBody} />
-            <rect x="40" y="68" width="40" height="28" rx="10" className={styles.yetiScreen} />
-            <circle cx="52" cy="82" r="5.5" className={styles.eyeStatic} />
-            <circle cx="68" cy="82" r="5.5" className={styles.eyeStatic} />
-          </svg>
-          <span className={styles.demoPlay} />
-          <p>Video segera hadir</p>
+          <img
+            src={zoraFrontEyes}
+            alt="Zora Mini asli: body yeti putih hasil cetak 3D dengan tanduk, layar OLED menampilkan dua mata bulat menyala cyan"
+            className={styles.phonePhoto}
+          />
         </div>
       </section>
 
