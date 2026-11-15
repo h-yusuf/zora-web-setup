@@ -60,7 +60,7 @@ export function FlashButton() {
   }
 
   return (
-    <esp-web-install-button manifest={MANIFEST_URL} class={styles.installButton}>
+    <esp-web-install-button manifest={MANIFEST_URL} className={styles.installButton}>
       <button slot="activate" className={styles.activate}>
         Flash Zora Mini
       </button>

@@ -128,8 +128,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
+  align-items: start;
   border-radius: var(--radius-panel);
   margin: 0 var(--margin-page);
+}
+
+.aboutLeft {
+  display: flex;
+  flex-direction: column;
 }
 
 .aboutText h2 {
@@ -150,10 +156,12 @@
 
 .aboutPhoto {
   width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   clip-path: circle(50% at 50% 50%);
   filter: grayscale(0.25) contrast(1.05) brightness(0.82);
+  background: var(--surface);
 }
 
 .aboutBlocks {
@@ -228,6 +236,7 @@
   border-radius: 50%;
   object-fit: cover;
   filter: grayscale(0.25) contrast(1.05) brightness(0.82);
+  background: var(--surface);
 }
 
 .stepName {
@@ -268,6 +277,10 @@
   border-radius: var(--radius-panel);
   overflow: hidden;
   height: 100%;
+}
+
+.ctaTilePhotoLeft {
+  background: var(--surface);
 }
 
 .ctaTilePhotoLeft img {
@@ -320,23 +333,25 @@
 @media (max-width: 760px) {
   .hero {
     flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 48px;
-    min-height: 100svh;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 0;
+    padding-top: 48px;
+    padding-bottom: 88vw;
   }
 
   .heroShape {
-    width: 78vmin;
-    height: 78vmin;
+    width: 76vw;
+    height: 76vw;
     right: auto;
     left: 50%;
     top: auto;
-    bottom: -10vmin;
+    bottom: -14vw;
     transform: translateX(-50%);
   }
 
   .heroText {
-    padding-top: 64px;
+    padding-top: 0;
     max-width: 100%;
   }
 

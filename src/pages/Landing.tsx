@@ -80,25 +80,27 @@ export function Landing() {
       </section>
 
       <section className={styles.about}>
-        <div className={styles.aboutText}>
-          <h2>Yeti kecil yang bisa dengar dan bicara</h2>
-          <p>
-            Zora Mini itu voice assistant AI yang jalan di ESP32-S3 SuperMini — mic, ampli kecil,
-            dan layar OLED buat &ldquo;wajah&rdquo;-nya: dua mata bulat yang nyala cyan di
-            kegelapan. Videonya sempat viral di TikTok, banyak yang nanya &ldquo;itu beli di
-            mana?&rdquo; — jawabannya: nggak dijual, tapi semua yang kamu butuh buat bikin sendiri
-            ada di sini.
-          </p>
-        </div>
-        <div className={styles.aboutPhotoWrap}>
-          <img
-            className={styles.aboutPhoto}
-            src="https://picsum.photos/id/319/900/900"
-            width={900}
-            height={900}
-            alt="Tangan memegang kamera rangefinder vintage — suasana oprek alat elektronik"
-            loading="lazy"
-          />
+        <div className={styles.aboutLeft}>
+          <div className={styles.aboutText}>
+            <h2>Yeti kecil yang bisa dengar dan bicara</h2>
+            <p>
+              Zora Mini itu voice assistant AI yang jalan di ESP32-S3 SuperMini — mic, ampli
+              kecil, dan layar OLED buat &ldquo;wajah&rdquo;-nya: dua mata bulat yang nyala cyan di
+              kegelapan. Videonya sempat viral di TikTok, banyak yang nanya &ldquo;itu beli di
+              mana?&rdquo; — jawabannya: nggak dijual, tapi semua yang kamu butuh buat bikin
+              sendiri ada di sini.
+            </p>
+          </div>
+          <div className={styles.aboutPhotoWrap}>
+            <img
+              className={styles.aboutPhoto}
+              src="https://picsum.photos/id/319/900/900"
+              width={900}
+              height={900}
+              alt="Tangan memegang kamera rangefinder vintage — suasana oprek alat elektronik"
+              loading="lazy"
+            />
+          </div>
         </div>
         <div className={styles.aboutBlocks}>
           <div>
