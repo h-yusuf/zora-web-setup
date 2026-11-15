@@ -67,3 +67,29 @@
   color: var(--muted);
   font-weight: 600;
 }
+
+.placeholder ul {
+  color: var(--muted);
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.placeholder li {
+  margin-bottom: 8px;
+}
+
+.faqHeading {
+  font-size: var(--step-head);
+  margin-top: 56px;
+  margin-bottom: 16px;
+}
+
+.page dt {
+  margin-top: 24px;
+  margin-bottom: 6px;
+}
+
+.page dd {
+  margin-left: 0;
+  color: var(--muted);
+}
