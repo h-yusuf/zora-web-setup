@@ -15,6 +15,11 @@
   --accent: #2ee6e0;
   --accent-ink: #081012;
 
+  /* the yeti illustration: body fur and its OLED face-screen */
+  --creature: #2b2f37;
+  --creature-shade: #1c2024;
+  --screen: #070a0c;
+
   /* swapping section grounds — one flat tone per chapter, same proportions as
      the dealt "swapping pastels" direction, recoloured dark */
   --field-1: #121417; /* hero / default */
