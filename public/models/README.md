@@ -1,19 +1,25 @@
 # public/models
 
-This folder is empty on purpose.
+This folder is empty on purpose — and may stay that way.
 
-Drop the Zora Mini enclosure's STL (or 3MF) files here once they're ready, for
-example:
+The print source for the yeti body isn't a custom model: it's
+[Compagnon 3.09 — Build Your Expressive Robot](https://makerworld.com/en/models/2109424-compagnon-309-build-your-expressive-robot#profileId-2281938)
+on MakerWorld, linked directly from `src/pages/docs/Diy.tsx`. MakerWorld is a
+login-gated maker platform, so its STL files are not mirrored here — builders
+download straight from that model page.
+
+If a custom/remixed STL ever replaces or supplements that model, drop it here,
+for example:
 
 ```
 public/models/zora-body.stl
-public/models/zora-lid.stl
 ```
 
-Then update the placeholder block in `src/pages/docs/Diy.tsx` (the "File STL
-belum tersedia — segera hadir" box) with real download links pointing at
-`/models/<file>.stl`.
+and update `Diy.tsx`'s intro paragraph to link to it alongside (or instead
+of) the MakerWorld model.
 
-Until then, `src/content/bom.ts` (ported from the `esp32/supermini` branch's
-`docs/3d-print-dimensions.md`) is the only reference a builder has for sizing
-their own enclosure.
+`src/content/bom.ts` (ported from the `esp32/supermini` branch's
+`docs/3d-print-dimensions.md`) stays as supplementary reference for the
+electronics' dimensions, regardless of which print source is used — note
+that it doesn't yet have DevKit N16R8-specific measurements (see the note on
+`/docs/diy` when that board is selected).
