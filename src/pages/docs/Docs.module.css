@@ -1,0 +1,69 @@
+.page {
+  background: var(--field-5);
+  color: var(--ink);
+  padding: 64px var(--margin-page) 96px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.page h1 {
+  font-size: var(--step-head);
+  margin-bottom: 20px;
+}
+
+.intro {
+  color: var(--muted);
+  max-width: 64ch;
+  margin-bottom: 40px;
+}
+
+.page table {
+  margin-bottom: 32px;
+}
+
+.page th,
+.page td {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: var(--step-small);
+}
+
+.page thead th {
+  color: var(--muted);
+  font-weight: 600;
+  background: var(--surface);
+}
+
+.page tbody tr:nth-child(odd) {
+  background: var(--surface);
+}
+
+.note {
+  color: var(--muted);
+  font-size: var(--step-small);
+}
+
+.note a,
+.page a {
+  color: var(--accent);
+}
+
+.note code,
+.page code {
+  background: var(--surface);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.placeholder {
+  background: var(--surface);
+  border-radius: var(--radius-panel);
+  padding: 32px;
+  margin: 32px 0;
+}
+
+.placeholder p {
+  color: var(--muted);
+  font-weight: 600;
+}
