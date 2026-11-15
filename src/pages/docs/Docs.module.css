@@ -56,6 +56,30 @@
   font-size: 0.9em;
 }
 
+.photoRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.photoRow figure {
+  margin: 0;
+}
+
+.photoRow img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-panel);
+}
+
+.photoRow figcaption {
+  color: var(--muted);
+  font-size: var(--step-small);
+  margin-top: 8px;
+}
+
 .placeholder {
   background: var(--surface);
   border-radius: var(--radius-panel);
@@ -92,4 +116,16 @@
 .page dd {
   margin-left: 0;
   color: var(--muted);
+}
+
+.sourceNote {
+  color: var(--muted);
+  font-size: var(--step-small);
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .photoRow {
+    grid-template-columns: 1fr;
+  }
 }
