@@ -1,49 +1,34 @@
 /*
   Zora Mini — design tokens
-  Direction: "one-motif" (design-taste-frontend), redrawn palette.
-  The dealt "swapping pastels" palette (periwinkle/pink/sand) fought Zora's own
-  material — a yeti robot with glowing cyan OLED eyes, built in the dark of a
-  workbench. Kept the dealt proportions (one ground, one ink, one accent, five
-  swapping field tones) but took the actual colours from the subject: near-black
-  ground, near-white ink, and the eyes' own cyan as the single accent.
+  Second redesign pass: GSAP-informed restraint. Same ground/ink/accent
+  direction as before (dark near-black ground, the eyes' own cyan as the
+  single accent) — the lesson taken from gsap.com is scale and restraint,
+  not a palette change: a far bigger type scale so the product name (and
+  each section's one heading) dominates the screen, one accent reserved for
+  the eyes and the primary action instead of washed across every link and
+  label, and fewer flat tones doing less decorative work.
 */
 :root {
-  --bg: #121417;
-  --surface: #1b1f24;
-  --ink: #f3f6f7;
-  --muted: #8b96a0;
+  --bg: #0d0f12;
+  --surface: #16191d;
+  --ink: #f5f7f8;
+  --muted: #76828c;
   --accent: #2ee6e0;
-  --accent-ink: #081012;
-
-  /* the yeti illustration: body fur and its OLED face-screen */
-  --creature: #2b2f37;
-  --creature-shade: #1c2024;
-  --screen: #070a0c;
-
-  /* swapping section grounds — one flat tone per chapter, same proportions as
-     the dealt "swapping pastels" direction, recoloured dark */
-  --field-1: #121417; /* hero / default */
-  --field-1-ink: #f3f6f7;
-  --field-2: #15212a; /* about — deep teal-black */
-  --field-2-ink: #f3f6f7;
-  --field-3: #1a1a1d; /* how-it-works — warm charcoal */
-  --field-3-ink: #f3f6f7;
-  --field-4: #0c2a28; /* cta — teal leaning toward the accent */
-  --field-4-ink: #f3f6f7;
-  --field-5: #0f1113; /* footer / docs chrome */
-  --field-5-ink: #f3f6f7;
+  --accent-ink: #061012;
 
   --font-display: "Pilcrow Rounded", "Inter", system-ui, sans-serif;
   --font-text: "Pilcrow Rounded", "Inter", system-ui, sans-serif;
 
+  /* three sizes do the visible work: small (nav/caption), body, and the
+     two display steps — a section heading, and the hero itself, far larger
+     than the first pass so the headline is the dominant thing on screen. */
   --step-small: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
   --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);
-  --step-lead: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
-  --step-head: clamp(2rem, 1.3rem + 3.2vw, 4rem);
-  --step-display: clamp(2.5rem, 1.2rem + 6.4vw, 6.25rem);
+  --step-head: clamp(2.75rem, 1.4rem + 5vw, 5.5rem);
+  --step-display: clamp(3.75rem, 0.5rem + 13vw, 11rem);
 
-  --radius: 999px; /* the motif's one corner rule: round, like the eye */
+  --radius: 999px;
   --radius-panel: 12px;
-  --gap-section: clamp(96px, 12vw, 200px);
-  --margin-page: clamp(16px, 4vw, 32px);
+  --gap-section: clamp(120px, 16vw, 260px);
+  --margin-page: clamp(20px, 5vw, 56px);
 }

@@ -9,12 +9,14 @@ export function Layout({ children }: { children: ReactNode }) {
         <Link to="/" className={styles.wordmark}>
           zora mini
         </Link>
-        <nav className={styles.links}>
-          <Link to="/">Beranda</Link>
-          <Link to="/docs/wiring">Wiring</Link>
-          <Link to="/docs/diy">DIY &amp; 3D Print</Link>
-          <Link to="/docs/flash">Flash Firmware</Link>
-        </nav>
+        <details className={styles.menu}>
+          <summary className={styles.menuButton}>Menu</summary>
+          <nav className={styles.menuPanel}>
+            <Link to="/docs/wiring">Wiring</Link>
+            <Link to="/docs/diy">DIY &amp; 3D Print</Link>
+            <Link to="/docs/flash">Flash Firmware</Link>
+          </nav>
+        </details>
       </header>
       <main>{children}</main>
       <footer className={styles.footer}>
