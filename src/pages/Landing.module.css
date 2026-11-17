@@ -1,9 +1,3 @@
-/*
-  Second redesign pass (GSAP-informed restraint): one dominant headline per
-  screen, huge vertical gaps between sections, flat grounds with no bordered
-  chrome, the accent colour reserved for the eyes and the primary action.
-*/
-
 .page {
   background: var(--bg);
   color: var(--ink);
@@ -13,58 +7,41 @@
 
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: 92svh;
+  overflow: hidden;
+  background: var(--field-1);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 28px;
+  align-items: center;
+  gap: 24px;
   padding: 0 var(--margin-page);
 }
 
-.eyes {
-  position: absolute;
-  top: var(--margin-page);
-  right: var(--margin-page);
-  width: 84px;
+.heroText {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  flex: 1 1 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.eyes svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.eye {
-  fill: var(--accent);
-}
-
-.pupil {
-  --pupil-x: 0px;
-  --pupil-y: 0px;
-  fill: var(--accent-ink);
-  transform: translate(var(--pupil-x), var(--pupil-y));
-  transition: transform 150ms ease-out;
-}
-
-.headline {
+.heroText h1 {
   font-size: var(--step-display);
-  line-height: 0.85;
-  letter-spacing: -0.04em;
-  margin: 0;
 }
 
 .lead {
-  font-size: var(--step-body);
+  font-size: 1.125rem;
   color: var(--muted);
-  max-width: 38ch;
+  max-width: 34ch;
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 36px;
+  width: fit-content;
+  padding: 16px 32px;
   border-radius: var(--radius);
   background: var(--accent);
   color: var(--accent-ink);
@@ -78,83 +55,196 @@
   transform: translateY(-2px);
 }
 
-/* ---------- Real photo ---------- */
-
-.demo {
-  padding: var(--gap-section) var(--margin-page);
+.heroArt {
+  flex: 1 1 360px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 40px;
-  text-align: center;
+  position: relative;
 }
 
-.demoCaption {
+.heroArt::before {
+  content: "";
+  position: absolute;
+  width: min(60vw, 520px);
+  height: min(60vw, 520px);
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent) 0%, transparent 70%);
+}
+
+.yetiSvg {
+  position: relative;
+  width: min(72vw, 460px);
+  height: auto;
+}
+
+.yetiBody {
+  fill: var(--creature);
+}
+
+.yetiShade {
+  fill: var(--creature-shade);
+}
+
+.yetiScreen {
+  fill: var(--screen);
+}
+
+.eye {
+  fill: var(--accent);
+}
+
+.pupil {
+  --pupil-x: 0px;
+  --pupil-y: 0px;
+  fill: var(--accent-ink);
+  transform: translate(var(--pupil-x), var(--pupil-y));
+  transition: transform 120ms ease-out;
+}
+
+/* ---------- Video placeholder ---------- */
+
+.demo {
+  background: var(--field-1);
+  padding: 0 var(--margin-page) var(--gap-section);
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.demoText h2 {
+  font-size: var(--step-head);
+  max-width: 14ch;
+  margin-bottom: 16px;
+}
+
+.demoText p {
   color: var(--muted);
-  font-size: var(--step-body);
   max-width: 44ch;
 }
 
-.demoPhoto {
-  width: min(420px, 100%);
-  aspect-ratio: 4 / 5;
+.phoneFrame {
+  justify-self: center;
+  width: min(240px, 70%);
+  aspect-ratio: 9 / 16;
+  background: var(--surface);
+  border: 2px solid var(--creature);
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+}
+
+.phonePhoto {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-panel);
 }
 
 /* ---------- About ---------- */
 
 .about {
+  background: var(--field-2);
   padding: var(--gap-section) var(--margin-page);
-  max-width: 960px;
-}
-
-.about h2 {
-  font-size: var(--step-head);
-  max-width: 16ch;
-  margin-bottom: 32px;
-}
-
-.about > p {
-  color: var(--muted);
-  font-size: var(--step-body);
-  max-width: 64ch;
-  margin-bottom: 72px;
-}
-
-.aboutColumns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
-  margin-bottom: 48px;
+  align-items: start;
+  border-radius: var(--radius-panel);
+  margin: 0 var(--margin-page);
 }
 
-.aboutColumns h3 {
-  font-size: 1.25rem;
-  margin-bottom: 12px;
+.aboutLeft {
+  display: flex;
+  flex-direction: column;
 }
 
-.aboutColumns p {
+.aboutText h2 {
+  font-size: var(--step-head);
+  max-width: 14ch;
+  margin-bottom: 20px;
+}
+
+.aboutText p {
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+.boardWrap {
+  margin-top: 40px;
+  width: min(360px, 90%);
+}
+
+.boardSvg {
+  width: 100%;
+  height: auto;
+}
+
+.boardBase {
+  fill: var(--surface);
+}
+
+.boardChip {
+  fill: var(--creature);
+}
+
+.boardWire {
+  stroke: var(--accent);
+}
+
+.boardWireB {
+  stroke: var(--muted);
+}
+
+.aboutBlocks {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-self: start;
+}
+
+.aboutBlocks h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.aboutBlocks p {
   color: var(--muted);
 }
 
-.aboutLink {
-  color: var(--ink);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.aboutButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 14px 28px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 8px;
 }
 
 /* ---------- How it works ---------- */
 
 .howItWorks {
+  background: var(--field-3);
   padding: var(--gap-section) var(--margin-page);
 }
 
-.howItWorks h2 {
+.howItWorksIntro {
+  max-width: 48ch;
+  margin-bottom: 56px;
+}
+
+.howItWorksIntro h2 {
   font-size: var(--step-head);
-  max-width: 16ch;
-  margin-bottom: 88px;
+  margin-bottom: 16px;
+}
+
+.howItWorksIntro p {
+  color: var(--muted);
 }
 
 .steps {
@@ -163,23 +253,50 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 64px;
+  gap: 40px;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stepConnector {
+  position: absolute;
+  top: 36px;
+  right: calc(100% + 4px);
+  width: calc(40px - 8px);
+  height: 2px;
+  background: var(--creature);
+}
+
+.stepIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .stepName {
   display: block;
-  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  color: var(--accent);
+  font-size: 1.1rem;
+  margin-bottom: 6px;
 }
 
 .stepBody {
   color: var(--muted);
-  max-width: 32ch;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
-.stepLink {
+.step a {
   color: var(--ink);
   font-weight: 600;
   text-decoration: underline;
@@ -189,38 +306,116 @@
 /* ---------- Final CTA ---------- */
 
 .ctaSection {
-  padding: var(--gap-section) var(--margin-page) calc(var(--gap-section) * 1.3);
+  background: var(--field-4);
+  padding: var(--gap-section) var(--margin-page);
+}
+
+.ctaRow {
+  display: grid;
+  grid-template-columns: 1fr 3.6fr 1fr;
+  gap: 12px;
+  height: clamp(260px, 32vw, 360px);
+}
+
+.ctaTile {
+  border-radius: var(--radius-panel);
+  overflow: hidden;
+  height: 100%;
+}
+
+.ctaTilePattern {
+  background-color: var(--surface);
+  background-image: radial-gradient(var(--creature) 2.5px, transparent 2.5px);
+  background-size: 22px 22px;
+}
+
+.ctaTileFlat {
+  background: var(--field-3);
+}
+
+.ctaTileCenter {
+  background: var(--accent);
+  color: var(--accent-ink);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  text-align: center;
+  justify-content: center;
+  gap: 16px;
+  padding: clamp(24px, 4vw, 40px);
 }
 
-.ctaSection h2 {
-  font-size: var(--step-head);
-  max-width: 16ch;
+.ctaTileCenter h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  color: var(--accent-ink);
 }
 
-.ctaSection > p {
-  color: var(--muted);
-  font-size: var(--step-body);
-  max-width: 44ch;
+.ctaTileCenter p {
+  max-width: 42ch;
+}
+
+.ctaTileCenter .cta {
+  background: var(--accent-ink);
+  color: var(--accent);
 }
 
 /* ---------- Phone ---------- */
 
 @media (max-width: 760px) {
-  .eyes {
-    width: 56px;
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 96px;
+    padding-bottom: 48px;
+    min-height: 0;
+    gap: 16px;
   }
 
-  .aboutColumns {
+  .heroText,
+  .heroArt {
+    flex: none;
+  }
+
+  .heroArt {
+    order: 2;
+  }
+
+  .yetiSvg {
+    width: min(60vw, 320px);
+  }
+
+  .demo {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .demoText p {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .boardWrap {
+    width: min(300px, 80%);
   }
 
   .steps {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 32px;
+  }
+
+  .stepConnector {
+    display: none;
+  }
+
+  .ctaRow {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .ctaTilePattern,
+  .ctaTileFlat {
+    height: 140px;
   }
 }
